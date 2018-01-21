@@ -1,0 +1,49 @@
+git init
+
+Configuring Got:
+	System-level configuration:
+		git config --system (stored in ->> /etc/gitconfig or c:\Programs Files(x86)\Git\etc\gitconfig)
+
+	User-level configuration:
+		git config --global (stored in ->> ~/.gitconfig or c:\Users\<NAME>\.gitconfig)
+
+	Repository-level configuration:
+		git config (stored in ->> .git/config in each repo)
+
+	if no changes are made t the lower end then the upper settings are used for lower-levels as well 
+
+git config --global --list (list all user-level configs if any)
+
+To make user-level config:
+	git config --global user.name "username"
+	git config --global user.email "useremail@something.com"
+	git config --global core.editor vim
+	git config --global help.autocorrect 1  // waits for 0.1 sec and automatically corrects the mityped command
+	git config --global color.ui auto
+	git config --global core.autocrlf true/false/input // crlf, carriage return line feed
+		// true for windows
+		// input for Mac/Linux
+		// false for windows if we are never going to commit on Unix(Linux/Mac)
+
+Commands: ###########################-----##########################
+	git init // creates a .git file with the repository and its meta-data
+	git status // tracks the commited and untracked files
+	echo "Hello, Git" > README.txt // adds text to a file
+	touch file1.txt file2.txt // to add files
+
+	git config --list // all configs
+	git config --global --list // all user-level configs
+	git config --global --unset user.name
+	git config --unset user.name(or any other setting)
+	vim .git/config // repo-level
+	cat ~/.gitconfig
+
+	git add filename // just adds file isnt commited(explicitly that file only)
+	git add -A // adds all files including untracked(non-staged) as well as tracked files(staged-files) and already added and changes made to files
+	git add -u // add all (these are already added) updated(change/deletion) files
+	git commit // brings the setted text-editor for add ing text at 
+	file commit, add to the STAGING-AREA
+	git commit -m "message here" (we can commit different files in different commits)
+	git log // brings the history of commit
+	git diff dd6819..a15ec6 // to see the difference between these two git commits
+	git diff HEAD~1..HEAD // HEAD is the top-most commit
