@@ -37,6 +37,7 @@ Commands: ###########################-----##########################
 	git config --unset user.name(or any other setting)
 	vim .git/config // repo-level
 	cat ~/.gitconfig
+	clear // clear the console area
 
 	git add filename // just adds file isnt commited(explicitly that file only)
 	git add -A // adds all files including untracked(non-staged) as well as tracked files(staged-files) and already added and changes made to files
@@ -47,3 +48,12 @@ Commands: ###########################-----##########################
 	git log // brings the history of commit
 	git diff dd6819..a15ec6 // to see the difference between these two git commits
 	git diff HEAD~1..HEAD // HEAD is the top-most commit
+	rm file1.txt and git status will show that this file is deleted
+	mv file1.txt new_file1.txt // now git status will show the changes
+	git checkout filename // pull this file from the repository, by default the master branch
+	git reset --hard // rather than doing checkout for individual files
+	git reset --hard HEAD~1
+	git reset --soft HEAD~1 // removes the top commit, changes remain #check this
+	git clean -n // shows all the unstaged files
+	git clean -f // removes all the unstaged files
+	vi .gitignore // creates a file hich contaoins the files we ant to ignore for commit, file stucture is relative to this .gitignore directory, relative to the repositroy, #check this
