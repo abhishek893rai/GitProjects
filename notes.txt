@@ -45,8 +45,13 @@ Commands: ###########################-----##########################
 	git commit // brings the setted text-editor for add ing text at 
 	file commit, add to the STAGING-AREA
 	git commit -m "message here" (we can commit different files in different commits)
-	git log // brings the history of commit
-	git diff dd6819..a15ec6 // to see the difference between these two git commits
+	git log 	// brings the history of commit
+	git log --oneline 	// condensed version of git commits
+	git log --oneline | wc -l 	// tells the total number of commits
+	git log --oneline --graph // tells the different braches and merges
+	git log --format=short <---> git shortlog // tells the authors and commits from the each, total by them
+	git shortlog -sne //	gives only summary, in decreasing order of commits, including their email as well
+	git diff dd6819..a15ec6 	// to see the difference between these two git commits
 	git diff HEAD~1..HEAD // HEAD is the top-most commit
 	rm file1.txt and git status will show that this file is deleted
 	mv file1.txt new_file1.txt // now git status will show the changes
@@ -57,3 +62,19 @@ Commands: ###########################-----##########################
 	git clean -n // shows all the unstaged files
 	git clean -f // removes all the unstaged files
 	vi .gitignore // creates a file hich contaoins the files we ant to ignore for commit, file stucture is relative to this .gitignore directory, relative to the repositroy, #check this
+
+	git clone url 	// to clone to a local repository
+	git show HEAD 	// shows the head/latest commit
+	git show HEAD~1		// shows the particular commit
+	git show 4374543 // show git with this hash
+	git remote		// shows the source from where the code came from
+	git remote -v
+
+	--- see Module 3 , Git Protocols Lecture ---
+
+	git branch
+	git remote
+	git remote add nickname url 	//	for public repos
+	git push -u nickname master 	//	when in that directory
+	//	it asks for username and password to credentialize it
+
